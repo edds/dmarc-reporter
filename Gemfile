@@ -1,6 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.2.7'
+gem 'thin'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -18,7 +19,6 @@ group :development do
   gem 'bullet'
   gem 'execjslint', :require => false
   gem 'rails_best_practices'
-  gem 'thin'
 end
 
 group :development, :test do
