@@ -11,6 +11,47 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 0) do
+ActiveRecord::Schema.define(:version => 20120805171825) do
+
+  create_table "policy_publisheds", :force => true do |t|
+    t.integer  "report_id"
+    t.string   "domain"
+    t.string   "adkim"
+    t.string   "aspf"
+    t.string   "p"
+    t.string   "pct"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "records", :force => true do |t|
+    t.integer  "report_id"
+    t.string   "source_ip"
+    t.string   "dkim"
+    t.integer  "count"
+    t.string   "disposition"
+    t.string   "spf"
+    t.string   "type"
+    t.string   "comment"
+    t.string   "header_from"
+    t.string   "dkim_domain"
+    t.string   "dkim_result"
+    t.string   "dkim_hresult"
+    t.string   "spf_domain"
+    t.string   "spf_result"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  create_table "reports", :force => true do |t|
+    t.string   "org_name"
+    t.string   "email"
+    t.string   "extra_contact_info"
+    t.string   "report_id"
+    t.datetime "begin"
+    t.datetime "end"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
+  end
 
 end

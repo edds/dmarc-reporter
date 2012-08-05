@@ -199,10 +199,12 @@ DEPENDENCIES
   execjslint
   factory_girl_rails
   jquery-rails
+  nokogiri
   pg
   rails (= 3.2.7)
   rails_best_practices
   rspec-rails
+  rubyzip
   sass-rails (~> 3.2.3)
   shoulda-matchers
   simple_form

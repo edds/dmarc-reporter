@@ -4,10 +4,22 @@ class EmailController < ApplicationController
 
   def create
     message = Mail.new(params[:message])
-    puts message.subject #print the subject to the logs
-    puts message.body.decoded #print the decoded body to the logs
-    puts message.attachments.first.inspect #
-    
+    zip_content_type = /^application\/(x-)?zip/
+    if message.content_type =~ zip_content_type
+      file = message.body
+    elsif message.attachments.first.content_type =~ zip_content_type
+      file = message.attachments.first.body
+    end
+
+    if file
+      dmarc = ParseDmarc.new(file)
+
+      report = Report.create(dmarc.metadata)
+      report.policy_published.create(dmarc.policy_published)
+      dmarc.records.each do |row|
+        report.records << Record.create(row)
+      end
+    end
 
     render text: 'success', status: 200
   end
