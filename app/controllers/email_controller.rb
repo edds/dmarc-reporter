@@ -4,9 +4,9 @@ class EmailController < ApplicationController
 
   def create
     message = Mail.new(params[:message])
-    Rails.logger.log message.subject #print the subject to the logs
-    Rails.logger.log message.body.decoded #print the decoded body to the logs
-    Rails.logger.log message.attachments.first.inspect #
+    puts message.subject #print the subject to the logs
+    puts message.body.decoded #print the decoded body to the logs
+    puts message.attachments.first.inspect #
     
 
     render text: 'success', status: 200
