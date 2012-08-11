@@ -1,0 +1,20 @@
+// Base stylesheet
+
+$gutter: 30px;
+
+@import 'helpers/_reset.scss';
+
+html {
+  font-size: 62.5%;
+}
+body {
+  font-family: 'Helvetica Neue', helvetica, sans-serif;
+  color: #444;
+  background: #ee8;
+}
+
+@import 'helpers/_typography.scss';
+@import 'helpers/_tables.scss';
+@import 'helpers/_layout.scss';
+
+

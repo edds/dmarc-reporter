@@ -1,0 +1,45 @@
+body {
+  text-align: center;
+}
+
+.wrapper {
+  max-width: 800px;
+  padding: $gutter;
+  background: #fff;
+  text-align: left;
+  margin: 0 auto;
+}
+
+table {
+  width: 100%;
+}
+.table-wrapper {
+  width: 100%;
+  overflow: auto;
+}
+
+@media (min-width: 768px){
+  .column-wrapper {
+    overflow: hidden;
+  }
+  .column {
+    width: 50%;
+    float: left;
+  }
+}
+
+.pagination {
+  .current,
+  a {
+    display: inline-block;
+    padding: $gutter/4;
+    border: 1px dotted #bbb;
+  }
+  a {
+    &:hover,
+    &:focus {
+      background: rgba(0,0,0,.1);
+    }
+  }
+}
+

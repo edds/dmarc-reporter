@@ -1,0 +1,12 @@
+table {
+  th, td {
+    padding: $gutter/4 $gutter/3;
+    border: 1px dotted #bbb;
+  }
+  th {
+    text-align: left;
+    background: rgba(0,0,0,.1);
+    border-style: solid;
+  }
+}
+

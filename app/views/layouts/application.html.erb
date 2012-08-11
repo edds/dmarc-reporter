@@ -12,7 +12,7 @@
     <script>document.documentElement.className = document.documentElement.className.replace(/\bno-js\b/, 'js');</script>
   </head>
   <%= body_tag do %>
-    <div class="container">
+    <div class="wrapper">
       <%- flash.each do |name, msg| -%>
         <%= content_tag :div, :class => "alert alert-#{name == :notice ? 'success' : 'error'}" do %>
           <a class="close" data-dismiss="alert">&times;</a>

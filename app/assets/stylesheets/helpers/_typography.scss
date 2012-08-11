@@ -1,0 +1,30 @@
+h1, h2, h3, h4, h5, h6 {
+  font-size: 2.8em;
+  line-height: 1.43;
+  margin: $gutter/3 0 $gutter*(2/3);
+}
+
+p, dt, dd, td, th, .pagination span {
+  font-size: 1.6em;
+  line-height: 1.25;
+}
+
+p, dl, ol, li, .table-wrapper {
+  margin: $gutter/3 0 $gutter*(2/3);
+}
+
+dt {
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+a {
+  text-decoration: none;
+  color: #00f;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+}
+
