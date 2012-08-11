@@ -15,7 +15,7 @@ class EmailController < ApplicationController
       dmarc = ParseDmarc.new(file)
 
       report = Report.create(dmarc.metadata)
-      report.policy_published.create(dmarc.policy_published)
+      report.create_policy_published(dmarc.policy_published)
       dmarc.records.each do |row|
         report.records << Record.create(row)
       end
