@@ -1,31 +1,25 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.2.7'
-gem 'thin'
-gem 'rubyzip'
+gem 'kaminari'
 gem 'nokogiri'
+gem 'rails', '3.2.7'
+gem 'rubyzip'
+gem 'thin'
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'bootstrap-sass'
   gem 'sass-rails', '~> 3.2.3'
-  gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
-gem 'simple_form'
-
 group :development do
-  gem 'brakeman'
   gem 'bullet'
-  gem 'execjslint', :require => false
   gem 'rails_best_practices'
 end
 
 group :development, :test do
   gem 'rspec-rails'
-  gem 'sqlite3'
+  gem 'mysql2'
 end
 
 group :production do
