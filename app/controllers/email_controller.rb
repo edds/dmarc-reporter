@@ -7,7 +7,7 @@ class EmailController < ApplicationController
     zip_content_type = /^application\/(x-)?zip/
     if message.content_type =~ zip_content_type
       file = message.body
-    elsif message.attachments.first.content_type =~ zip_content_type
+    elsif message.attachments.any? and message.attachments.first.content_type =~ zip_content_type
       file = message.attachments.first.body
     end
 
