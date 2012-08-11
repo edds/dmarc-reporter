@@ -1,0 +1,27 @@
+<% content_for :page_title, 'Reports' %>
+
+<div class="reports">
+  <h1>Reports</h1>
+
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>org_name</th>
+        <th>begin</th>
+        <th>end</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @reports.each do |report| %>
+        <tr>
+          <td><%= link_to report.id,  report_path(report) %></td>
+          <td><%= report.org_name %></td>
+          <td><%= report.begin.to_s(:long_ordinal) %></td>
+          <td><%= report.end.to_s(:long_ordinal) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= paginate @reports %>
+</div>

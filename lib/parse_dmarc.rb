@@ -43,7 +43,6 @@ class ParseDmarc
   end
 
   def records
-    data = @doc.at_xpath('//record')
     attrs = {
       source_ip: "row/source_ip",
       count: "row/count",
@@ -60,10 +59,10 @@ class ParseDmarc
       spf_result: "auth_results/spf/result"
     }
 
-    data.xpath('//row').map do |record|
+    @doc.xpath('//record').map do |record|
       record_attrs = {}
       attrs.map do |attr, path|
-        record_attrs[attr] = record.at_xpath("//#{path}/text()").to_s
+        record_attrs[attr] = record.at_xpath("#{path}/text()").to_s
       end
       record_attrs
     end
