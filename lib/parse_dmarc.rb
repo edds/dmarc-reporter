@@ -49,7 +49,7 @@ class ParseDmarc
       disposition: "row/policy_evaluated/disposition",
       dkim: "row/policy_evaluated/dkim",
       spf: "row/policy_evaluated/spf",
-      type: "row/policy_evaluated/reason/type",
+      reason_type: "row/policy_evaluated/reason/type",
       comment: "row/policy_evaluated/reason/comment",
       header_from: "identifiers/header_from",
       dkim_domain: "auth_results/dkim/domain",
