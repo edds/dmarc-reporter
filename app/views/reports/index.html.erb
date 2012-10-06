@@ -8,6 +8,8 @@
       <th>org_name</th>
       <th>begin</th>
       <th>end</th>
+      <th>passed</th>
+      <th>failed</th>
     </tr>
   </thead>
   <tbody>
@@ -17,6 +19,8 @@
         <td><%= report.org_name %></td>
         <td><%= report.begin.to_s(:long_ordinal) %></td>
         <td><%= report.end.to_s(:long_ordinal) %></td>
+        <td><%= report.passed_count %></td>
+        <td><%= report.failed_count %></td>
       </tr>
     <% end %>
   </tbody>
