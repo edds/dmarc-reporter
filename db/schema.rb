@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120805171825) do
+ActiveRecord::Schema.define(:version => 20121006125430) do
 
   create_table "policy_publisheds", :force => true do |t|
     t.integer  "report_id"
@@ -31,7 +31,7 @@ ActiveRecord::Schema.define(:version => 20120805171825) do
     t.integer  "count"
     t.string   "disposition"
     t.string   "spf"
-    t.string   "type"
+    t.string   "reason_type"
     t.string   "comment"
     t.string   "header_from"
     t.string   "dkim_domain"
@@ -52,6 +52,8 @@ ActiveRecord::Schema.define(:version => 20120805171825) do
     t.datetime "end"
     t.datetime "created_at",         :null => false
     t.datetime "updated_at",         :null => false
+    t.integer  "failed_count"
+    t.integer  "passed_count"
   end
 
 end
