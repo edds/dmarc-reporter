@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   before_filter :authenticate
-  protect_from_forgery
+  protect_from_forgery with: :exception
 
   def present(object, klass = nil)
     klass ||= "#{object.class}Presenter".constantize
