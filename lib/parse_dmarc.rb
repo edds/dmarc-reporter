@@ -1,7 +1,4 @@
 class ParseDmarc
-  require 'date'
-  require 'zip/zip'
-
   def initialize(file)
     @doc = Nokogiri::XML.parse(unzip(file))
   end
@@ -11,7 +8,7 @@ class ParseDmarc
     tmpfile_name = "./tmp/myfile_#{Process.pid}"
     begin
       File.open(tmpfile_name,'wb') {|f| f.write(file) }
-      Zip::ZipFile.foreach(tmpfile_name) do |zip_entry|
+      Zip::File.foreach(tmpfile_name) do |zip_entry|
         zip_entry.get_input_stream {|io| xml << io.read }
       end
     ensure
