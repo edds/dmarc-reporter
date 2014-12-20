@@ -1,0 +1,58 @@
+Return-Path: <noreply-dmarc-support@google.com>
+Delivered-To: joerg@higgsboson.tk
+Received: from mail.higgsboson.tk
+	by mail.higgsboson.tk (Dovecot) with LMTP id LqO4OJhOlVS6CAAAta76Uw
+	for <joerg@higgsboson.tk>; Sat, 20 Dec 2014 11:25:28 +0100
+Received: from mail-qc0-x24a.google.com (mail-qc0-x24a.google.com [IPv6:2607:f8b0:400d:c01::24a])
+	by mail.higgsboson.tk (Postfix) with ESMTPS id ABAF275EA
+	for <admin@higgsboson.tk>; Sat, 20 Dec 2014 11:25:28 +0100 (CET)
+Authentication-Results: mail.higgsboson.tk; dkim=pass reason="2048-bit key"
+	header.d=google.com header.i=@google.com header.b=gBM/Qq1r;
+	dkim-adsp=pass
+Received: by mail-qc0-f202.google.com with SMTP id i17so109491qcy.5
+        for <admin@higgsboson.tk>; Sat, 20 Dec 2014 02:25:27 -0800 (PST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=google.com; s=20120113;
+        h=mime-version:message-id:date:subject:from:to:content-type
+         :content-disposition:content-transfer-encoding;
+        bh=UkhuSwwT9ITxrUluail9mgijdjNv2cH6ZPpvVgFoynQ=;
+        b=gBM/Qq1ruq/lEOyL2DQXS3V8iKcYfdkii3ILAMZAOCdFK9nA4LgmhAiVMnHDsjQNqW
+         FRit5cSu8CLMImhqogloyzm1hyj2pztZF/O/V2MD+t+jqI5C0Ex6sE8pUnXVa0j4/NoB
+         p1qrg6GISxPcbDPeqqJvpY0pQ/xXy7LSy73LfwNcU6GRK1E+7W+reXxy5dnRcHw+6pt2
+         hefa2Zw9vSBo5Q3gVppyELVdaw+WYyKy3Gb41TzfwUUf2oaoVpA60S4fiD8JdGWhrw60
+         zRJa+9EcDnN7e5jo1H5Vv3iAJs9NdIL1DdSVnALF53/Q4y9KpvM68H3h7+fCOl61Z8r5
+         5kjw==
+MIME-Version: 1.0
+X-Received: by 10.236.69.233 with SMTP id n69mr10100008yhd.51.1419071127341;
+ Sat, 20 Dec 2014 02:25:27 -0800 (PST)
+Message-ID: <5367839200730979585@google.com>
+Date: Sat, 20 Dec 2014 10:25:27 +0000
+Subject: Report domain: higgsboson.tk Submitter: google.com Report-ID: 5367839200730979585
+From: noreply-dmarc-support@google.com
+To: admin@higgsboson.tk
+Content-Type: application/zip; 
+	name="google.com!higgsboson.tk!1418947200!1419033599.zip"
+Content-Disposition: attachment; 
+	filename="google.com!higgsboson.tk!1418947200!1419033599.zip"
+Content-Transfer-Encoding: base64
+
+UEsDBAoAAAAIANBQlEVtKbP5lAMAADgwAAAyAAAAZ29vZ2xlLmNvbSFoaWdnc2Jvc29uLnRrITE0
+MTg5NDcyMDAhMTQxOTAzMzU5OS54bWztm81unDAQgO99ilXuMTZ/C4iQnvoE7RkZGFgrYCNj0qRP
+XxN+lqbJKpXarg+WVloY22PP+GM8Nrvp/VPXHh5BDkzwuxuC8M0BeCkqxpu7m29fv9xGN4f77FNa
+A1QFLR+yT4dDKqEXUuUdKFpRRSeZlgrZ5Jx2kDVCNC2gUnSpswnnOtBR1mZcaA3t823VUVneDmM/
+qfu8bzbXW9o8KUnzUnBFS5UzXovspFSfOM7SEp1bOtQpGHcoH76DRP3z/Xx15/phGERYK/5d2dzL
+YhOrssALj5EXuxgfPRwf4yAKUudcPFfXdkMuKW8Wy7SogIbxjPgkiv2jbp06s2QtB15NpTH2vCCO
+9VD4qsz5VdvW297BaS9aVj7n/Vi0bDjBNhChXcWzE2uaoRCD4Eg9aIWzdK5CqwfWZTJ15otFOPT1
+i2z6nkW9nhgOqdMv98MqGFZJX6qMTJZNFy8jfWtU2pelkOsApfi+uWAQoywhZ33mhviY1FGBEx9j
+kpTYSxLXrXRfW5W1USlGrrtNnfliFS89wyNtR+2+ai2YfMKGXgxMaaYXC/aSXb3JHbUmTVfYPLOY
+Xi8Fm3t21r7qU8/XamPKKuCK1Uw/UVuzE9AKZF5L0b2ep33Rous3DSkd1SmXMIytOit9NeBlwn+d
++QXsqeFizXKzGbTXku5MPWus4JFJqKrn+cF8Tz2HUT9Yb/Rwxst5bcdUeQXlQ8xQjBPiBy/MlJqZ
+QDPjYcuMacw04gd0aIA/1fw3WZmiil/EUVKVmheSuCRMPKjrpIYgTHR8j97nxrXcXIWbRyZaUKiW
+6IfOEFh7/ZATYeT6LtJBBx0vBBoLzJWAaXSW9wCSQ4t0pnnl5Wmf0lR6eSJ2eTKSmk48nagSgDio
+97X3dBj+fzrjxpYX03gxIJ3R+0bkEoJijMKjJcQ0Qoxah0gcINeLkItRbKOJZeXDOQtZt9SupcY0
+aoaxqJ8uJyxXyXH9iRdieTGNF1NyXBwj4ukNdHQ5cZmO5i0ndjV666VAYaOLadQ00+u5y6dz/zy0
+hAEKsN4UYeRbQEwDBNQJJND2ystPTBBxCYqmBejCVsge39rFJyM+fjliIeGUslhYLCyXYDmfsRBi
+t8sWlotp7ZTMkiiMEooxTRKbrxjHy8fyFQVdD1IKeYVdUG2hMQ0ak34a9RYz9lzOPGZMPMfdYkxp
+eTGNFxNOWtaXz8TXH5u8GMfIf0p2U+f8J4CfUEsBAgoACgAAAAgA0FCURW0ps/mUAwAAODAAADIA
+AAAAAAAAAAAAAAAAAAAAAGdvb2dsZS5jb20haGlnZ3Nib3Nvbi50ayExNDE4OTQ3MjAwITE0MTkw
+MzM1OTkueG1sUEsFBgAAAAABAAEAYAAAAOQDAAAAAA==
