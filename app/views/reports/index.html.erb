@@ -1,30 +1,32 @@
 <% content_for :page_title, 'Reports' %>
 
-<h1>Reports</h1>
-<table>
-  <thead>
-    <tr>
-      <th>#</th>
-      <th>org_name</th>
-      <th>begin</th>
-      <th>end</th>
-      <th>passed</th>
-      <th>failed</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @reports.each do |report| %>
+<section>
+  <h2>Reports</h2>
+  <table>
+    <thead>
       <tr>
-        <td><%= link_to report.id,  report_path(report) %></td>
-        <td><%= report.org_name %></td>
-        <td><%= report.begin.to_s(:long_ordinal) %></td>
-        <td><%= report.end.to_s(:long_ordinal) %></td>
-        <td><%= report.passed_count %></td>
-        <td><%= report.failed_count %></td>
+        <th>#</th>
+        <th>org_name</th>
+        <th>begin</th>
+        <th>end</th>
+        <th>passed</th>
+        <th>failed</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
-<div class="pagination">
-  <%= paginate @reports %>
-</div>
+    </thead>
+    <tbody>
+      <% @reports.each do |report| %>
+        <tr>
+          <td><%= link_to report.id,  report_path(report) %></td>
+          <td><%= report.org_name %></td>
+          <td><%= report.begin.to_s(:long_ordinal) %></td>
+          <td><%= report.end.to_s(:long_ordinal) %></td>
+          <td><%= report.passed_count %></td>
+          <td><%= report.failed_count %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <div class="pagination">
+    <%= paginate @reports %>
+  </div>
+</section>

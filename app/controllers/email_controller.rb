@@ -1,25 +1,11 @@
 class EmailController < ApplicationController
-  require 'mail'
   skip_before_filter :verify_authenticity_token
 
   def create
-    message = Mail.new(params[:message])
-    zip_content_type = /^application\/(x-)?zip/
-    if message.content_type =~ zip_content_type
-      file = message.body
-    elsif message.attachments.any? and message.attachments.first.content_type =~ zip_content_type
-      file = message.attachments.first.body
-    end
+    dmarc = Dmarc::Email.new(params[:message]).report
+    return unless dmarc
 
-    if file
-      dmarc = ParseDmarc.new(file)
-
-      report = Report.create(dmarc.metadata)
-      report.create_policy_published(dmarc.policy_published)
-      dmarc.records.each do |row|
-        report.records << Record.create(row)
-      end
-    end
+    Record.save_dmarc(dmarc)
 
     render text: 'success', status: 200
   end

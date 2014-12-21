@@ -1,5 +1,4 @@
 class ReportsController < ApplicationController
-
   def index
     @reports = Report.order("created_at desc").page(params[:page])
   end
@@ -9,5 +8,4 @@ class ReportsController < ApplicationController
     @policy_published = @report.policy_published
     @records = @report.records.order("count desc").page(params[:page])
   end
-
 end

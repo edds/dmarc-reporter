@@ -2,71 +2,76 @@
 
 <h1><%= link_to "Reports", reports_path %> / #<%= @report.id %></h1>
 
-<div class="column-wrapper">
-  <div class="report column">
-    <h2>Report</h2>
-    <dl>
-      <% [:org_name, :email, :extra_contact_info, :report_id ].each do |attr| %>
-        <dt><%= attr.to_s.humanize %></dt>
-        <dd><%= @report.send(attr) %></dd>
-      <% end %>
-      <dt>begin</dt>
-      <dd><%= @report.begin.to_s(:long_ordinal) %></dd>
-      <dt>End</dt>
-      <dd><%= @report.end.to_s(:long_ordinal) %></dd>
-    </dl>
+<section>
+  <div class="column-wrapper">
+    <div class="report column">
+      <h2>Report</h2>
+      <dl>
+        <% [:org_name, :email, :extra_contact_info, :report_id ].each do |attr| %>
+          <dt><%= attr.to_s.humanize %></dt>
+          <dd><%= @report.send(attr) %></dd>
+        <% end %>
+        <dt>begin</dt>
+        <dd><%= @report.begin.to_s(:long_ordinal) %></dd>
+        <dt>End</dt>
+        <dd><%= @report.end.to_s(:long_ordinal) %></dd>
+      </dl>
+    </div>
+    <div class="policy column">
+      <h2>Policy Published</h2>
+      <dl>
+        <% [:domain, :adkim, :aspf, :p, :pct ].each do |attr| %>
+          <dt><%= attr.to_s.humanize %></dt>
+          <dd><%= @policy_published.send(attr) %></dd>
+        <% end %>
+      </dl>
+    </div>
   </div>
-  <div class="policy column">
-    <h2>Policy Published</h2>
-    <dl>
-      <% [:domain, :adkim, :aspf, :p, :pct ].each do |attr| %>
-        <dt><%= attr.to_s.humanize %></dt>
-        <dd><%= @policy_published.send(attr) %></dd>
-      <% end %>
-    </dl>
+</section>
+
+<section>
+  <h2>Records</h2>
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>source_ip</th>
+          <th>dkim</th>
+          <th>count</th>
+          <th>disposition</th>
+          <th>spf</th>
+          <th>reason_type</th>
+          <th>comment</th>
+          <th>header_from</th>
+          <th>dkim_domain</th>
+          <th>dkim_result</th>
+          <th>dkim_hresult</th>
+          <th>spf_domain</th>
+          <th>spf_result</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @records.each do |record| %>
+          <tr>
+            <td><%= record.source_ip %></td>
+            <td><%= record.dkim %></td>
+            <td><%= record.count %></td>
+            <td><%= record.disposition %></td>
+            <td><%= record.spf %></td>
+            <td><%= record.reason_type %></td>
+            <td><%= record.comment %></td>
+            <td><%= record.header_from %></td>
+            <td><%= record.dkim_domain %></td>
+            <td><%= record.dkim_result %></td>
+            <td><%= record.dkim_hresult %></td>
+            <td><%= record.spf_domain %></td>
+            <td><%= record.spf_result %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
   </div>
-</div>
-<h2>Records</h2>
-<div class="table-wrapper">
-<table>
-  <thead>
-    <tr>
-      <th>source_ip</th>
-      <th>dkim</th>
-      <th>count</th>
-      <th>disposition</th>
-      <th>spf</th>
-      <th>reason_type</th>
-      <th>comment</th>
-      <th>header_from</th>
-      <th>dkim_domain</th>
-      <th>dkim_result</th>
-      <th>dkim_hresult</th>
-      <th>spf_domain</th>
-      <th>spf_result</th>
-    </tr>
-  </thead>
-  <tbody>
-    <% @records.each do |record| %>
-      <tr>
-        <td><%= record.source_ip %></td>
-        <td><%= record.dkim %></td>
-        <td><%= record.count %></td>
-        <td><%= record.disposition %></td>
-        <td><%= record.spf %></td>
-        <td><%= record.reason_type %></td>
-        <td><%= record.comment %></td>
-        <td><%= record.header_from %></td>
-        <td><%= record.dkim_domain %></td>
-        <td><%= record.dkim_result %></td>
-        <td><%= record.dkim_hresult %></td>
-        <td><%= record.spf_domain %></td>
-        <td><%= record.spf_result %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-</div>
+</section>
 <div class="pagination">
   <%= paginate @records %>
 </div>

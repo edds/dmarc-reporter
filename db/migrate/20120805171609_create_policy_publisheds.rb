@@ -8,7 +8,7 @@ class CreatePolicyPublisheds < ActiveRecord::Migration
       t.string :p
       t.string :pct
 
-      t.timestamps
+      t.timestamps null: false
     end
   end
 end
