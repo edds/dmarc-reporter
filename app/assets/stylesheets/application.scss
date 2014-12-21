@@ -10,11 +10,9 @@ html {
 body {
   font-family: 'Helvetica Neue', helvetica, sans-serif;
   color: #444;
-  background: #ee8;
+  background: none repeat scroll 0% 0% #E1E1E1;
 }
 
 @import 'helpers/_typography.scss';
 @import 'helpers/_tables.scss';
 @import 'helpers/_layout.scss';
-
-
