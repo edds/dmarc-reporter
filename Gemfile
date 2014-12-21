@@ -6,7 +6,7 @@ gem 'rails', '4.2.0'
 gem 'rubyzip'
 gem 'thin'
 gem 'airbrake'
-gem 'mailman'
+gem 'mailman', github: "titanous/mailman"
 
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
