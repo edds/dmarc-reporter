@@ -8,7 +8,7 @@ class CreateReports < ActiveRecord::Migration
       t.datetime :begin
       t.datetime :end
 
-      t.timestamps
+      t.timestamps null: false
     end
   end
 end

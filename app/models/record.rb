@@ -1,9 +1,15 @@
 class Record < ActiveRecord::Base
-  attr_accessible :comment, :count, :disposition, :dkim, :dkim, :dkim_domain, :dkim_hresult, :dkim_result, :header_from, :report_id, :source_ip, :spf, :spf_domain, :spf_result, :reason_type
-
   belongs_to :report
 
   after_save :update_report_counts
+
+  def self.save_dmarc(dmarc)
+    report = Report.create(dmarc.metadata)
+    report.create_policy_published(dmarc.policy_published)
+    dmarc.records.each do |row|
+      report.records << Record.create(row)
+    end
+  end
 
   def update_report_counts
     report.update_counts if report

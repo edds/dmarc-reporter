@@ -2,17 +2,16 @@ source 'http://rubygems.org'
 
 gem 'kaminari'
 gem 'nokogiri'
-gem 'rails', '3.2.7'
+gem 'rails', '4.2.0'
 gem 'rubyzip'
 gem 'thin'
 gem 'airbrake'
 
-# Gems used only for assets and not required
-# in production environments by default.
-group :assets do
-  gem 'sass-rails', '~> 3.2.3'
-  gem 'uglifier'
-end
+gem 'sass-rails', '~> 5.0'
+gem 'uglifier', '>= 1.3.0'
+
+# Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
+gem 'turbolinks'
 
 group :development do
   gem 'bullet'
@@ -20,16 +19,34 @@ group :development do
 end
 
 group :development, :test do
-  gem 'rspec-rails'
   gem 'mysql2'
 end
 
-group :production do
+group :production, :test do
   gem 'pg'
 end
 
 group :test do
+  gem 'rspec-rails'
   gem 'capybara'
   gem 'factory_girl_rails'
   gem 'shoulda-matchers'
+  gem "database_cleaner"
 end
+
+gem 'pry-rails'
+
+group :development, :test do
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger
+  # console
+  gem 'byebug'
+  #
+  # Access an IRB console on exception pages or by using <%= console %> in
+  # views
+  gem 'web-console', '~> 2.0'
+  #
+  # Spring speeds up development by keeping your application running
+  # in the background. Read more: https://github.com/rails/spring
+  gem 'spring'
+end
+

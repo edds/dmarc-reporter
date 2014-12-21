@@ -17,7 +17,7 @@ class CreateRecords < ActiveRecord::Migration
       t.string :spf_domain
       t.string :spf_result
 
-      t.timestamps
+      t.timestamps null: false
     end
   end
 end

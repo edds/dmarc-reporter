@@ -1,4 +1,4 @@
-Dmarc::Application.routes.draw do
+Rails.application.routes.draw do
   root :to => redirect('/reports')
 
   resources :email, only: [:create]
