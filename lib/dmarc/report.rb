@@ -8,14 +8,19 @@ module Dmarc
 
     def unzip(file)
       xml = ""
-      tmpfile_name = "./tmp/myfile_#{Process.pid}"
+      tempfile = Tempfile.new('dmarc')
+      tempfile.binmode
       begin
-        File.open(tmpfile_name,'wb') {|f| f.write(file) }
-        Zip::File.foreach(tmpfile_name) do |zip_entry|
+        tempfile.write(file)
+        tempfile.flush
+        Zip::File.foreach(tempfile.path) do |zip_entry|
           zip_entry.get_input_stream {|io| xml << io.read }
         end
       ensure
-        File.delete(tmpfile_name)
+        if tempfile
+          tempfile.close
+          tempfile.unlink
+        end
       end
       xml
     end
