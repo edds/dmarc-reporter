@@ -9,6 +9,8 @@ or on your own server using [mailman][1] to fetch emails from stdin/imap/pop3/ma
 
 # Installation using mailman
 
+**WARNING** When using pop3, mailman will delete emails after being processed.
+
 * `git clone https://github.com/edds/dmarc-reporter.git`
 * `cd dmarc-reporter`
 * `gem install bundler`
@@ -19,6 +21,7 @@ or on your own server using [mailman][1] to fetch emails from stdin/imap/pop3/ma
 * `rake db:migrate`
 * `rails server` # the web ui
 * `ruby script/mailman` # the mail processor
+
 
 # Installation on Heroku
 
